@@ -3,6 +3,14 @@ body
     font: Arial, sans-serif;
 }
 
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
 .buttonArea,
 .footerText,
 #geoLocationContainer,
@@ -23,4 +31,28 @@ body
     background:white;
     color: black;
     padding: 7px;
+}
+
+.main-views {
+    width: 100%;
+    float: left;
+}
+
+#slider-container {
+    width: 960px;
+}
+
+button {
+    width: 250px;
+}
+
+span.form_and {
+    height: 25px;
+    line-height: 25px;
+    margin-right: 10px;
+}
+
+.bored_submit {
+    position: relative;
+    bottom: 0;
 }
