@@ -12,7 +12,7 @@ function get_people() {
     //window.location.href = '#tabstrip-uiinteraction';
     $.ajax({
         url: "http://boringfree.com/api/",
-        dataType: "json",
+        dataType: 'json',
         data: {
             appkey: "test"
             //cmd: "login",
@@ -21,10 +21,13 @@ function get_people() {
             //    pass: "123"
             //}
         },
-        success: function(data) {
+        success: function(info) {
             alert("tes");
             $('.result').html('test');
             //$('.result').html(data);
+        },
+        error: function() {
+            alert('shibai se');
         }
     });
 }
