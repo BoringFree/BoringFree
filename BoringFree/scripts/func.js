@@ -1,4 +1,4 @@
-$// JavaScript Document
+,// JavaScript Document
 
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -9,25 +9,26 @@ function onDeviceReady() {
 }
 
 function get_people() {
+    jQuery.support.cors = true;
+    alert('dev');
+    //e.preventDefault();
     //window.location.href = '#tabstrip-uiinteraction';
     $.ajax({
-        url: "http://boringfree.com/api/",
-        dataType: 'json',
-        data: {
-            appkey: "test"
-            //cmd: "login",
-            //params: {
-            //    name: "Georgi",
-            //    pass: "123"
-            //}
-        },
+        url: "http://boringfree.com/api/index.php?appkey=test",
+        type: 'get',
+        crossDomain: true,
+        ProcessData: true,
+        contentType: "application/json; charset=utf-8",
+        dataType: 'jsonp',
         success: function(info) {
-            alert("tes");
-            $('.result').html('test');
+            alert(info);
+            console.log(info);
             //$('.result').html(data);
         },
         error: function() {
-            alert('shibai se');
+            alert('luck? ');
         }
     });
+    
+    return false;
 }
