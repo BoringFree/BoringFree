@@ -245,36 +245,6 @@ a.search {
     background: #34393C;
 }
 
-
-/* ivo css for checkboxes */
-input[type=checkbox] {
-    padding-left:5px;
-    padding-right:5px;
-    border-radius:5px;
-    margin-right: 10px;
-
-    -webkit-appearance:button;
-
-    border: double 2px #1d1d1d;
-
-    background-color:#e9e9e9;
-    color:#000;
-    white-space: nowrap;
-    overflow:hidden;
-
-    width:40px;
-    height:40px;
-}
-
-input[type=checkbox]:checked {
-    background: url("img/img_check.png") #e9e9e9 center;    
-}
-
-input[type=checkbox]:hover {
-    box-shadow:0px 0px 10px #1d1d1d;
-}
-/* ivo css for checkboxes */
-
 .left_check {
     float: left;
     width: 150px;
@@ -366,3 +336,31 @@ input[type=checkbox]:hover {
     color: #fafafa;
 }
 
+/* ivo css for checkboxes */
+input[type=checkbox] {
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:5px;
+    margin-right: 10px;
+
+    -webkit-appearance:button;
+
+    border: double 2px #1d1d1d;
+
+    background-color:#e9e9e9;
+    color:#000;
+    white-space: nowrap;
+    overflow:hidden;
+
+    width:40px;
+    height:40px;
+}
+
+input[type=checkbox]:checked {
+    background: url("img/img_check.png") #e9e9e9 center;    
+}
+
+input[type=checkbox]:hover {
+    box-shadow:0px 0px 10px #1d1d1d;
+}
+/* ivo css for checkboxes */

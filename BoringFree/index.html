@@ -19,7 +19,7 @@
                             <img src="styles/img/logo.png" class="logo" />
                         </div>
                 </header>
-                <h1>&nbsp;I like ...</h1>
+                <h1>I like ...</h1>
                 <form method="post" class="main_form">
                     <div class="left_check">
                         <h3><input type="checkbox" name="footbal"/><span>Football</span></h3>
@@ -45,7 +45,7 @@
                     <div class="right_check">
                         <h3><input type="checkbox" name="date"/><span>Date</span></h3>
                     </div>
-                    <div class="bored_submit">
+                    <div class="bored_submit" style="float: left;">
                         <button type="submit" data-bind="events:{click: listener}" id="get_people" type="person">I AM BORED!</button>
                         <div class="clr"></div>
                     </div>
@@ -102,9 +102,21 @@
                 <div class="chat_window">Here you can chat</div>
             </div>
     
-            <div data-role="view" id="tabstrip-detailed" data-title="" class="main-views">
+            <div data-role="view" id="tabstrip-detailed-person" data-title="" class="main-views">
                 <header data-role="header">
                         <div data-role="navbar" class="fleft first_tab_header">
+                            <div class="km-view-title" style="margin-top: -3px;">Bored Person</div>
+                            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                            <span data-role="view-title"></span>
+                        </div>
+                </header>
+                <div class="detailed_result"></div>
+            </div>
+        
+            <div data-role="view" id="tabstrip-detailed-event" data-title="" class="main-views">
+                <header data-role="header">
+                        <div data-role="navbar" class="fleft first_tab_header">
+                            <div class="km-view-title" style="margin-top: -3px;">Local Event</div>
                             <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
                             <span data-role="view-title"></span>
                         </div>

@@ -10,7 +10,7 @@ function onDeviceReady() {
 
 function get_detailed_people(elem) {
     var pid = elem.currentTarget.attributes[2].nodeValue;
-    window.location.href = '#tabstrip-detailed';
+    window.location.href = '#tabstrip-detailed-person';
     $.ajax({
         url: "http://boringfree.com/api/",
         type: 'get',
@@ -55,7 +55,7 @@ function get_chat() {
 
 function get_detailed_event(elem) {
     var eid = elem.currentTarget.attributes[2].nodeValue;
-    window.location.href = '#tabstrip-detailed';
+    window.location.href = '#tabstrip-detailed-event';
     $.ajax({
         url: "http://boringfree.com/api/",
         type: 'get',
