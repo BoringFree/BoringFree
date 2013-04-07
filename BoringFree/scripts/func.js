@@ -30,7 +30,7 @@ function get_detailed_people(elem) {
             html_content += '<div class="detailed_people_container">';
             html_content += '<img src="'+info.photobig+'" class="item_type_icon fleft" />';
             html_content += '<div class="item_title">'+info.name+'</div>';
-            html_content += '<div class="item_owner_info">'+info.email+' - '+info.phone+'</div>';
+            html_content += '<div class="item_owner_info fleft">'+info.email+' - '+info.phone+'</div>';
             html_content += '</div>';
             html_content += '<div class="chat_button" data-bind="events:{click: listener}" >Chat</div>';
             $('.detailed_result').html(html_content);
@@ -75,7 +75,7 @@ function get_detailed_event(elem) {
             html_content += '<div class="item_title">'+info.info+'</div>';
             html_content += '<div class="item_desc">'+info.description+' - '+info.location+' <div class="item_time">'+info.start+'-'+info.end+'</div></div>';
             html_content += '<div class="item_owner_info">'+info.pname+' - '+info.pphone+'</div>';
-            html_content += '</div><hr/>';
+            html_content += '</div>';
             $('.detailed_result').html(html_content);
         },
         error: function() {
@@ -109,11 +109,11 @@ function get_events() {
             for(var i = 0; i < info.length; i++) {
                 //console.log(info[i]);
                 html_content += '<div class="event_container" data-bind="events:{click: listener}" id="'+info[i].eid+'">';
-                html_content += '<img src="styles/img/'+info[i].type+'.png" class="item_type_icon" />';
-                html_content += '<div class="item_title">'+info[i].title+'</div>';
-                html_content += '<div class="item_desc">'+info[i]+' - '+info[i].location+' <div class="item_time">'+info[i].start+'-'+info[i].end+'</div></div>';
-                html_content += '<div class="item_owner_info">'+info[i].pname+' - '+info[i].pphone+'</div>';
-                html_content += '</div><hr/>';
+                html_content += '<img src="styles/img/'+info[i].type+'.png" class="item_type_icon fleft" />';
+                html_content += '<div class="item_title fleft">'+info[i].title+'</div>';
+                html_content += '<div class="item_desc">'+info[i].city+' - '+info[i].location+' <div class="item_time">'+info[i].start+'-'+info[i].end+'</div></div>';
+                html_content += '<div class="clr"></div>';
+                html_content += '</div>';
             }
             $('.result').children().remove();
             $('.result').html(html_content);
@@ -153,8 +153,8 @@ function get_people() {
                 //console.log(info[i]);
                 html_content += '<div class="people_container" data-bind="events:{click: listener}" id="'+info[i].pid+'">';
                 html_content += '<img src="'+info[i].photo+'" class="item_type_icon fleft" />';
-                html_content += '<div class="item_title">'+info[i].name+'</div>';
-                html_content += '<div class="item_owner_info">'+info[i].email+' - '+info[i].phone+'</div>';
+                html_content += '<div class="item_title fleft">'+info[i].name+'</div>';
+                html_content += '<div class="item_owner_info fleft">'+info[i].email+' - '+info[i].phone+'</div>';
                 html_content += '</div>';
             }
             

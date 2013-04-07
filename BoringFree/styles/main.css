@@ -146,10 +146,72 @@ span.form_and {
 
 .people_container {
     height: 83px;
+    color: #34393C;
+    border-top: 1px solid #C5C7C8;
+    padding: 1px 0 0 0;
+}
+
+.event_container {
+    height: 83px;
+    color: #34393C;
     border-top: 1px solid #C5C7C8;
     padding: 1px 0 0 0;
 }
 
 .people_container img {
+    margin: 0 15px 0 0;
     border: 1px solid #828484;
+}
+
+.event_container img {
+    width: 80px;
+    height: 80px;
+    margin: 0 15px 0 0;
+    border: 1px solid #828484;
+}
+
+.event_container .item_desc {
+    font-size: 11px;
+}
+
+.people_container .item_title {
+    margin: 15px 0 0 0;
+    width: 210px;
+    font-size: 16px;
+}
+
+.event_container .item_title {
+    margin: 9px 0 0 0;
+    width: 210px;
+    font-size: 14px;
+}
+
+.result {
+    background: #F7F8F8;
+}
+
+a.list_people {
+    color: #34393C;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 90px;
+}
+
+a.list_events {
+    color: #34393C;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 90px;
+}
+
+.km-navbar.small_nav {
+    background: #F7F8F8;
+    height: 30px;
+}
+
+.list_choice.active_list {
+    background: orange;
+    border-radius: 5px;
 }
