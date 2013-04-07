@@ -11,6 +11,19 @@ body
     float: right;
 }
 
+.clr {
+    clear: both;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
 .buttonArea,
 .footerText,
 #geoLocationContainer,
@@ -56,3 +69,36 @@ span.form_and {
     position: relative;
     bottom: 0;
 }
+
+
+/*copied styles start */
+#navbar-home h2,
+#navbar-grouped h2 {
+    display: inline-block;
+    font-size: 1.1em;
+    margin: 1em 0 1.5em 1em;
+}
+
+#navbar-home img,
+#navbar-grouped img {
+	float: left;
+    width: 4em;
+    height: 4em;
+    margin: 0;
+    -webkit-box-shadow: 0 1px 3px #333;
+    box-shadow: 0 1px 3px #333;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.km-ios #navbar-home .km-listview,
+.km-ios #navbar-grouped .km-list {
+    background-color: #eaf1f5;
+}
+
+
+.km-android div.km-view {
+    -webkit-box-direction: normal;
+}
+
+/*copied styles end */

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <title></title>
@@ -14,6 +14,13 @@
     </head>
     <body>
             <div data-role="view" id="tabstrip-home" data-title="Hello World!" class="main-views">
+                
+                <header data-role="header">
+                        <div data-role="navbar">
+                            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                            <span data-role="view-title"></span>
+                        </div>
+                </header>
                 <h1>I like ...</h1>
                 <form method="post">
                     <div>
@@ -41,41 +48,68 @@
                         <input type="checkbox" name="date"/><span>Date</span>
                     </div>
                     <div class="bored_submit">
-                        <button type="submit" data-bind="events:{click: listener}" class="fright" id="get_people">I am bored</button><span class="fright form_and">and </span>
+                        <button type="submit" data-bind="events:{click: listener}" class="fright" id="get_people" type="person">I am bored</button><span class="fright form_and">and </span>
                     </div>
                 </form>
-                <div class="result">ss</div>
             </div>
     
-            <div data-role="view" id="tabstrip-uiinteraction" data-title="UI Interaction" class="main-views">
-                <h1>Say Hello!</h1>
-            </div>
-    
-            <div data-role="view" id="tabstrip-geolocation" data-title="Geolocation" class="main-views">
-                <h1>My Location</h1>
-                <div id="geoLocationContainer">
-                    <div id="myLocation">Unable to get location information. Please check your network connection and try again.</div>
-                    <a id="refreshMap" data-role="button" data-click="getLocation" data-icon="refresh">Refresh Location</a>
-                    <div id="map_canvas"></div>
+            <div data-role="view" id="tabstrip-list" data-title="UI Interaction" class="main-views">
+                <header data-role="header">
+                        <div data-role="navbar">
+                            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                            <span data-role="view-title"></span>
+                        </div>
+                </header>
+                <div class="event_type_menu">
+                    <ul>
+                        <li class="fleft" type="person" data-bind="events:{click: listener}" id="list_people">Хора</li>
+                        <li class="fright" type="event" data-bind="events:{click: listener}" id="list_events">Събития</li>
+                    </ul>
+                    <div class="clr"></div>
                 </div>
+                <div id="window"></div>
+                <div class="result"></div>
+            </div>
+    
+            <div data-role="view" id="tabstrip-detailed" data-title="Geolocation" class="main-views">
+                
+                <header data-role="header">
+                        <div data-role="navbar">
+                            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                            <span data-role="view-title"></span>
+                        </div>
+                </header>
+                <h1>My Location</h1>
+                <div class="detailed_result"></div>
             </div>
 
-        <div data-role="layout" data-id="mobile-tabstrip">
-            <header data-role="header">
-                <div data-role="navbar">
-                    <span data-role="view-title"></span>
-                </div>
-            </header>
-        </div>
         <script>
             var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mobile-tabstrip" });
             
-            var viewModel = kendo.observable({
+            var people_view = kendo.observable({
                 listener: get_people
             });
+            
+            var events_view = kendo.observable({
+                listener: get_events
+            });
+            
+            var detailed_events_view = kendo.observable({
+                listener: get_detailed_people //events
+            });
+            
+            var detailed_people_view = kendo.observable({
+                listener: get_detailed_people
+            });
 
-            kendo.bind($("#get_people"), viewModel);
+            kendo.bind($("#get_people"), people_view);
+            kendo.bind($("#list_people"), people_view);
+            kendo.bind($("#list_events"), events_view);
             
         </script>
+        
     </body>
+    <style scoped>
+            
+        </style>
 </html>
