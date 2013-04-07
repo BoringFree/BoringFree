@@ -83,6 +83,8 @@ span.form_and {
     width: 200px;
     height: 31px;
     border: none;
+    margin: 20px auto;
+    display: block;
     background: url("img/bored_button.png") top left no-repeat;
 }
 
@@ -121,13 +123,6 @@ span.form_and {
 .footer_search {
     background: blue;
     text-align: center;
-}
-
-.local_activities {
-    height: 100px;
-    width: 200px;
-    margin: 25px 0;
-    border: 1px solid red;
 }
 
 .navigation {
@@ -207,7 +202,10 @@ a.list_people {
     height: 25px;
     line-height: 25px;
     text-align: center;
-    width: 90px;
+    width: 96px;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 1.13em;
 }
 
 a.list_events {
@@ -215,7 +213,21 @@ a.list_events {
     height: 25px;
     line-height: 25px;
     text-align: center;
-    width: 90px;
+    width: 96px;
+    font-size: 1.13em;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+a.search {
+    color: #34393C;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 96px;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 1.13em;
 }
 
 .km-navbar.small_nav {
@@ -224,7 +236,9 @@ a.list_events {
 }
 
 .list_choice.active_list {
-    background: orange;
+    color: #fafafa;
+    /*background: #921923;*/
+    background: #34393C;
     border-radius: 5px;
 }
 
@@ -239,3 +253,113 @@ a.list_events {
 .km-content.km-scroll-wrapper {
     background: #34393C;
 }
+
+
+/* ivo css for checkboxes */
+input[type=checkbox] {
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:5px;
+    margin-right: 10px;
+
+    -webkit-appearance:button;
+
+    border: double 2px #1d1d1d;
+
+    background-color:#e9e9e9;
+    color:#000;
+    white-space: nowrap;
+    overflow:hidden;
+
+    width:40px;
+    height:40px;
+}
+
+input[type=checkbox]:checked {
+    background: url("img/img_check.png") #e9e9e9 center;    
+}
+
+input[type=checkbox]:hover {
+    box-shadow:0px 0px 10px #1d1d1d;
+}
+/* ivo css for checkboxes */
+
+.left_check {
+    float: left;
+    width: 150px;
+}
+
+.right_check {
+    float: left;
+    width: 150px;
+    clear: right;
+}
+
+.right_check input {
+    float: left;
+}
+
+.left_check input {
+    float: left;
+}
+
+.right_check span {
+    padding-top: 18px;
+    float: left;
+}
+
+.left_check span {
+    padding-top: 18px;
+    float: left;
+}
+
+.item_owner_info {
+    margin-left: 1rem;
+}
+
+.detailed_event_container {
+    text-align: justify;
+    margin-left: 10px;    
+    margin-right: 10px;
+}
+.search_container {
+    margin: 1rem;
+}
+
+.search_container #city, .search_container #location {
+    margin-top: 1rem;    
+}
+
+.detailed_event_container img {
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.detailed_people_container img {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.chat_button {
+    background-color: #921923;
+    border-radius: 5px;
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    width:77px;
+    height: 44px;
+    font-size: 2em;
+    text-align: left;
+}
+
+.local_activities {
+    margin-top: 2rem;
+    background-color: #921923;
+    height: 48px;
+    width: 264px;
+    margin: 2rem 0px 0px 0px;
+    border-radius: 10px;
+    font-size: 44px;
+    padding: 1rem;
+}
+

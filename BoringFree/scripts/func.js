@@ -28,11 +28,15 @@ function get_detailed_people(elem) {
         success: function(info) {
             var html_content = '';
             html_content += '<div class="detailed_people_container">';
-            html_content += '<img src="'+info.photobig+'" class="item_type_icon fleft" />';
-            html_content += '<div class="item_title">'+info.name+'</div>';
-            html_content += '<div class="item_owner_info fleft">'+info.email+' - '+info.phone+'</div>';
-            html_content += '</div>';
+            html_content += '<img src="'+info.photobig+'" class="item_type_icon" />';
+            html_content += '<div class="item_title"><h3>'+info.name+'</h3></div>';
+            html_content += '<div class="item_owner_info fleft">'+info.phone+'</div>';
+            html_content += '<div class="clr"></div>';
+            html_content += '<div class="item_owner_info fleft">'+info.email+'</div>';
+            html_content += '<div class="clr"></div>';
             html_content += '<div class="chat_button" data-bind="events:{click: listener}" >Chat</div>';
+            html_content += '<div class="clr"></div>';
+            html_content += '</div>';
             $('.detailed_result').html(html_content);
             kendo.bind($(".chat_button"), chat_view);
         },
@@ -70,11 +74,12 @@ function get_detailed_event(elem) {
             console.log(info);
             var html_content = '';
             html_content += '<div class="detailed_event_container">';
-            html_content += '<img src="styles/img/'+info.type+'.png" class="item_type_icon" />';
-            html_content += '<div class="item_title">'+info.title+'</div>';
-            html_content += '<div class="item_title">'+info.info+'</div>';
-            html_content += '<div class="item_desc">'+info.description+' - '+info.location+' <div class="item_time">'+info.start+'-'+info.end+'</div></div>';
-            html_content += '<div class="item_owner_info">'+info.pname+' - '+info.pphone+'</div>';
+            html_content += '<img src="styles/img/'+info.type+'.png" class="item_type_icon" align="left" />'
+            html_content += '<div class="item_title"><h3>'+info.title+'</h3></div>';
+            html_content += '<div class="item_owner_info">'+info.pname+' <tel>'+info.pphone+'</tel></div>';
+            html_content += '<div class="item_desc"><br />'+info.description+'<br />'+info.location+'</div>';
+            html_content += '<div class="item_time"><br />'+info.start+' - '+info.end+'</div>';
+            html_content += '<div class="item_title"><br />'+info.info+'</div>';
             html_content += '</div>';
             $('.detailed_result').html(html_content);
         },
@@ -107,11 +112,12 @@ function get_events() {
             console.log(info);
             
             for(var i = 0; i < info.length; i++) {
+                
                 //console.log(info[i]);
                 html_content += '<div class="event_container" data-bind="events:{click: listener}" id="'+info[i].eid+'">';
                 html_content += '<img src="styles/img/'+info[i].type+'.png" class="item_type_icon fleft" />';
                 html_content += '<div class="item_title fleft">'+info[i].title+'</div>';
-                html_content += '<div class="item_desc">'+info[i].city+' - '+info[i].location+' <div class="item_time">'+info[i].start+'-'+info[i].end+'</div></div>';
+                html_content += '<div class="item_desc">'+info[i].city+' - '+info[i].location+' <div class="item_time">'+info[i].start+' - '+info[i].end+'</div></div>';
                 html_content += '<div class="clr"></div>';
                 html_content += '</div>';
             }
@@ -154,7 +160,7 @@ function get_people() {
                 html_content += '<div class="people_container" data-bind="events:{click: listener}" id="'+info[i].pid+'">';
                 html_content += '<img src="'+info[i].photo+'" class="item_type_icon fleft" />';
                 html_content += '<div class="item_title fleft">'+info[i].name+'</div>';
-                html_content += '<div class="item_owner_info fleft">'+info[i].email+' - '+info[i].phone+'</div>';
+                html_content += '<div class="item_owner_info fleft" style="padding-top: 10px;">'+info[i].phone+'</div>';
                 html_content += '</div>';
             }
             
@@ -168,6 +174,13 @@ function get_people() {
         }
     });
     
+    return false;
+}
+
+function get_search() {
+    jQuery.support.cors = true;
+    //e.preventDefault();
+    window.location.href = '#tabstrip-search';
     return false;
 }
 

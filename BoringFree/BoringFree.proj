@@ -79,11 +79,12 @@
     <Content Include="styles\img\first_tab_header_bg.png" />
     <Content Include="styles\img\img_arrow.png" />
     <Content Include="styles\img\img_background.png" />
-    <Content Include="styles\img\basketball.png" />
+    <Content Include="styles\img\bastketball.png" />
     <Content Include="styles\img\beer.png" />
     <Content Include="styles\img\coffee.png" />
+    <Content Include="styles\img\img_check.png" />
     <Content Include="styles\img\img_man.png" />
-    <Content Include="styles\img\img_run.png" />
+    <Content Include="styles\img\run.png" />
     <Content Include="styles\img\logo.png" />
     <Content Include="styles\img\navigation_bg.png" />
     <Content Include="styles\img\tennis.png" />

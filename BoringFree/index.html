@@ -21,32 +21,32 @@
                 </header>
                 <h1>I like ...</h1>
                 <form method="post" class="main_form">
-                    <div>
-                        <input type="checkbox" name="footbal"/><span>Football</span>
+                    <div class="left_check">
+                        <h3><input type="checkbox" name="footbal"/><span>Football</span></h3>
                     </div>
-                    <div>
-                        <input type="checkbox" name="cafe"/><span>Cafe</span>
+                    <div class="right_check">
+                        <h3><input type="checkbox" name="cafe"/><span>Cafe</span></h3>
                     </div>
-                    <div>
-                        <input type="checkbox" name="music"/><span>Music</span>
+                    <div class="left_check">
+                        <h3><input type="checkbox" name="music"/><span>Music</span></h3>
                     </div>
-                    <div>
-                        <input type="checkbox" name="art"/><span>Art</span>
+                    <div class="right_check">
+                        <h3><input type="checkbox" name="art"/><span>Art</span></h3>
                     </div>
-                    <div>
-                        <input type="checkbox" name="movies"/><span>Movies</span>
+                    <div class="left_check">
+                        <h3><input type="checkbox" name="movies"/><span>Movies</span></h3>
                     </div>
-                    <div>
-                        <input type="checkbox" name="tennis"/><span>Tennis</span>
+                    <div class="right_check">
+                        <h3><input type="checkbox" name="tennis"/><span>Tennis</span></h3>
                     </div>
-                    <div>
-                        <input type="checkbox" name="soccer"/><span>Soccer</span>
+                    <div class="left_check">
+                        <h3><input type="checkbox" name="soccer"/><span>Soccer</span></h3>
                     </div>
-                    <div>
-                        <input type="checkbox" name="date"/><span>Date</span>
+                    <div class="right_check">
+                        <h3><input type="checkbox" name="date"/><span>Date</span></h3>
                     </div>
-                    <div class="bored_submit">
-                        <button type="submit" data-bind="events:{click: listener}" class="fright" id="get_people" type="person"></button>
+                    <div class="bored_submit" style="float: left; margin: 0 60px;">
+                        <button type="submit" data-bind="events:{click: listener}" id="get_people" type="person"></button>
                         <div class="clr"></div>
                     </div>
                 </form>
@@ -54,8 +54,8 @@
     
             <div data-role="view" id="tabstrip-list_people" data-title="Bored People" class="main-views">
                 <header data-role="header">
-                        <div data-role="navbar" class="fleft navigation">
-                            <div class="km-view-title">Bored People</div>
+                        <div data-role="navbar" class="fleft first_tab_header">
+                            <div class="km-view-title" style="margin-top: -3px;">Bored People</div>
                             <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
                             <span data-role="view-title"></span>
                             
@@ -63,20 +63,18 @@
                 </header>
                 <header data-role="header">
                         <div data-role="navbar" class="fleft small_nav">
-                            <a data-align="left" class="fleft list_choice active_list list_people" type="person" data-bind="events:{click: listener}" >Хора</a>
-                            <a data-align="right" class="fleft list_choice list_events" type="person" data-bind="events:{click: listener}" >Събития</a>
+                            <a data-align="left" class="fleft list_choice active_list list_people" type="person" data-bind="events:{click: listener}" >People</a>
+                            <a data-align="left" class="fleft list_choice search" type="person" data-bind="events:{click: listener}">Search</a>
+                            <a data-align="left" class="fleft list_choice list_events" type="person" data-bind="events:{click: listener}" >Events</a>
                         </div>
                 </header>
                 <div class="result"></div>
-                <footer data-role="footer" class="footer_search">
-                        <a href="#tabstrip-search">Search</a>  
-                </footer>
             </div>
         
             <div data-role="view" id="tabstrip-list_events" data-title="Events Nearby" class="main-views">
                 <header data-role="header">
-                        <div data-role="navbar" class="fleft navigation">
-                            <div class="km-view-title">Events Nearby</div>
+                        <div data-role="navbar" class="fleft first_tab_header">
+                            <div class="km-view-title" style="margin-top: -3px;">Events Nearby</div>
                             <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
                             <div id="create_event" class="nav-button" data-align="right"></div>
                             <span data-role="view-title"></span>
@@ -85,32 +83,28 @@
                 </header>
                 <header data-role="header">
                         <div data-role="navbar" class="fleft small_nav">
-                            <a data-align="left" class="fleft list_choice list_people" type="person" data-bind="events:{click: listener}" >Хора</a>
-                            <a data-align="right" class="fleft list_choice list_events active_list" type="person" data-bind="events:{click: listener}" >Събития</a>
+                            <a data-align="left" class="fleft list_choice list_people" type="person" data-bind="events:{click: listener}" >People</a>
+                            <a data-align="left" class="fleft list_choice search" type="person" data-bind="events:{click: listener}">Search</a>
+                            <a data-align="left" class="fleft list_choice list_events active_list" type="person" data-bind="events:{click: listener}" >Events</a>
                         </div>
                 </header>
                 <div class="result"></div>
-                <footer data-role="footer" class="footer_search">
-                        <a href="#tabstrip-search">Search</a>  
-                </footer>
             </div>
         
-            <div data-role="view" id="tabstrip-chat" data-title="Chat" class="main-views">
+            <div data-role="view" id="tabstrip-chat" data-title="" class="main-views">
                 <header data-role="header">
-                        <div data-role="navbar" class="fleft">
-                            <div class="km-view-title"></div>
+                        <div data-role="navbar" class="fleft first_tab_header">
+                            <div class="km-view-title" style="margin-top: -3px;">Chat</div>
                             <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
                             <span data-role="view-title"></span>
-                            
                         </div>
                 </header>
                 <div class="chat_window">Here you can chat</div>
             </div>
     
             <div data-role="view" id="tabstrip-detailed" data-title="" class="main-views">
-                
                 <header data-role="header">
-                        <div data-role="navbar">
+                        <div data-role="navbar" class="fleft first_tab_header">
                             <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
                             <span data-role="view-title"></span>
                         </div>
@@ -118,20 +112,29 @@
                 <div class="detailed_result"></div>
             </div>
         
-            <div data-role="view" id="tabstrip-search" data-title="Geolocation" class="main-views">
-                
+            <div data-role="view" id="tabstrip-search" data-title="" class="main-views">
                 <header data-role="header">
-                        <div data-role="navbar">
+                        <div data-role="navbar" class="fleft first_tab_header">
+                            <div class="km-view-title" style="margin-top: -3px;">Search</div>
                             <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
                             <span data-role="view-title"></span>
                         </div>
                 </header>
+                <header data-role="header">
+                        <div data-role="navbar" class="fleft small_nav">
+                            <a data-align="left" class="fleft list_choice list_people" type="person" data-bind="events:{click: listener}" >People</a>
+                            <a data-align="left" class="fleft list_choice active_list search" type="person" data-bind="events:{click: listener}">Search</a>
+                            <a data-align="left" class="fleft list_choice list_events" type="person" data-bind="events:{click: listener}" >Events</a>
+                        </div>
+                </header>
+
                 <div class="search_container">
-                    Search <br/>
-                    <input id="merchant" type="text" placeholder="City"/>
-                    <input id="merchant" type="text" placeholder="Location"/>
-                    <div class="local_events local_activities" data-bind="events:{click: listener}" id="list_people">Local Events</div>
-                    <div class="local_bored_people local_activities" data-bind="events:{click: listener}" id="list_events">Bored People near you</div>
+                    <form action="#">
+                        <input id="city" type="text" placeholder="City"/>
+                        <input id="location" type="text" placeholder="Location"/>
+                        <div class="local_events local_activities" data-bind="events:{click: listener}" id="list_people">Events: 10</div>
+                        <div class="local_bored_people local_activities" data-bind="events:{click: listener}" id="list_events">People: 76</div>
+                    </form>
                 </div>
             </div>
 
@@ -140,6 +143,10 @@
             
             var people_view = kendo.observable({
                 listener: get_people
+            });
+            
+            var search_view = kendo.observable({
+                listener: get_search
             });
             
             var events_view = kendo.observable({
@@ -161,6 +168,8 @@
             kendo.bind($("#get_people"), people_view);
             kendo.bind($(".list_people"), people_view);
             kendo.bind($(".list_events"), events_view);
+            kendo.bind($(".search"), search_view);
+
             
         </script>
         
