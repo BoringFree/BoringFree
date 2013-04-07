@@ -68,6 +68,7 @@
     <Content Include="scripts\app.js" />
     <Content Include="scripts\func.js" />
     <Content Include="styles\img\add_icon.png" />
+    <Content Include="styles\img\bored_button.png" />
     <Content Include="styles\img\brandLogo.jpg" />
     <Content Include="styles\img\brandLogo.png" />
     <Content Include="styles\img\btn_back.png" />
@@ -75,6 +76,7 @@
     <Content Include="styles\img\btn_bored_selected.png" />
     <Content Include="styles\img\btn_normal.png" />
     <Content Include="styles\img\btn_settings.png" />
+    <Content Include="styles\img\first_tab_header_bg.png" />
     <Content Include="styles\img\img_arrow.png" />
     <Content Include="styles\img\img_background.png" />
     <Content Include="styles\img\basketball.png" />
@@ -82,10 +84,11 @@
     <Content Include="styles\img\coffee.png" />
     <Content Include="styles\img\img_man.png" />
     <Content Include="styles\img\img_run.png" />
+    <Content Include="styles\img\logo.png" />
+    <Content Include="styles\img\navigation_bg.png" />
     <Content Include="styles\img\tennis.png" />
     <Content Include="styles\img\img_woman.png" />
     <Content Include="styles\img\layout.jpg" />
-    <Content Include="styles\img\navigation_bg.png" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>

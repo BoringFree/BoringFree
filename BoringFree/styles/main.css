@@ -79,6 +79,12 @@ span.form_and {
     bottom: 0;
 }
 
+.bored_submit button {
+    width: 200px;
+    height: 31px;
+    border: none;
+    background: url("img/bored_button.png") top left no-repeat;
+}
 
 /*copied styles start */
 #navbar-home h2,
@@ -127,6 +133,11 @@ span.form_and {
 .navigation {
     height: 60px;
     background: url("img/navigation_bg.png") top left repeat-x;
+}
+
+.first_tab_header {
+    height: 60px;
+    background: url("img/first_tab_header_bg.png") top left repeat-x;
 }
 
 .km-view-title {
@@ -218,4 +229,12 @@ a.list_events {
 
 .list_choice {
     margin: 5px 0 0 0;
+}
+
+.first_tab {
+    background: url("img/navigation_bg.png") #8C1822 top left repeat-x;
+}
+
+.km-content.km-scroll-wrapper {
+    background: #34393C;
 }
