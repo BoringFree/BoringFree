@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title></title>
@@ -12,7 +12,7 @@
         <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
         <link href="styles/main.css" rel="stylesheet" />
     </head>
-    <body>
+    <body id="app_body" style="background: #F7F8F8;">
             <div data-role="view" id="tabstrip-home" data-title="Hello World!" class="main-views">
                 
                 <h1>I like ...</h1>
@@ -47,7 +47,50 @@
                 </form>
             </div>
     
-            <div data-role="view" id="tabstrip-list" data-title="UI Interaction" class="main-views">
+            <div data-role="view" id="tabstrip-list_people" data-title="Bored People" class="main-views">
+                <header data-role="header">
+                        <div data-role="navbar" class="fleft navigation">
+                            <div class="km-view-title">Bored People</div>
+                            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                            <span data-role="view-title"></span>
+                            
+                        </div>
+                </header>
+                <header data-role="header">
+                        <div data-role="navbar" class="fleft">
+                            <a data-align="left" class="fleft list_people" type="person" data-bind="events:{click: listener}" >Хора</a>
+                            <a data-align="right" class="fleft list_events" type="person" data-bind="events:{click: listener}" >Събития</a>
+                        </div>
+                </header>
+                <div class="result"></div>
+                <footer data-role="footer" class="footer_search">
+                        <a href="#tabstrip-search">Search</a>  
+                </footer>
+            </div>
+        
+            <div data-role="view" id="tabstrip-list_events" data-title="Events Nearby" class="main-views">
+                <header data-role="header">
+                        <div data-role="navbar" class="fleft navigation">
+                            <div class="km-view-title">Events Nearby</div>
+                            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                            <div id="create_event" class="nav-button" data-align="right"></div>
+                            <span data-role="view-title"></span>
+                            
+                        </div>
+                </header>
+                <header data-role="header">
+                        <div data-role="navbar" class="fleft">
+                            <a data-align="left" class="fleft list_people" type="person" data-bind="events:{click: listener}" >Хора</a>
+                            <a data-align="right" class="fleft list_events" type="person" data-bind="events:{click: listener}" >Събития</a>
+                        </div>
+                </header>
+                <div class="result"></div>
+                <footer data-role="footer" class="footer_search">
+                        <a href="#tabstrip-search">Search</a>  
+                </footer>
+            </div>
+        
+            <div data-role="view" id="tabstrip-chat" data-title="UI Interaction" class="main-views">
                 <header data-role="header">
                         <div data-role="navbar" class="fleft">
                             <div class="km-view-title"></div>
@@ -56,14 +99,7 @@
                             
                         </div>
                 </header>
-                <header data-role="header">
-                        <div data-role="navbar" class="fleft">
-                            <a data-align="left" class="fleft" type="person" data-bind="events:{click: listener}" id="list_people">Хора</a>
-                            <a data-align="right" class="fleft" type="person" data-bind="events:{click: listener}" id="list_events">Събития</a>
-                        </div>
-                </header>
-                <div id="window"></div>
-                <div class="result"></div>
+                <div class="chat_window">Here you can chat</div>
             </div>
     
             <div data-role="view" id="tabstrip-detailed" data-title="Geolocation" class="main-views">
@@ -75,6 +111,23 @@
                         </div>
                 </header>
                 <div class="detailed_result"></div>
+            </div>
+        
+            <div data-role="view" id="tabstrip-search" data-title="Geolocation" class="main-views">
+                
+                <header data-role="header">
+                        <div data-role="navbar">
+                            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                            <span data-role="view-title"></span>
+                        </div>
+                </header>
+                <div class="search_container">
+                    Search <br/>
+                    <input id="merchant" type="text" placeholder="City"/>
+                    <input id="merchant" type="text" placeholder="Location"/>
+                    <div class="local_events local_activities" data-bind="events:{click: listener}" id="list_people">Local Events</div>
+                    <div class="local_bored_people local_activities" data-bind="events:{click: listener}" id="list_events">Bored People near you</div>
+                </div>
             </div>
 
         <script>
@@ -95,10 +148,14 @@
             var detailed_people_view = kendo.observable({
                 listener: get_detailed_people
             });
+            
+            var chat_view = kendo.observable({
+                listener: get_chat
+            });
 
             kendo.bind($("#get_people"), people_view);
-            kendo.bind($("#list_people"), people_view);
-            kendo.bind($("#list_events"), events_view);
+            kendo.bind($(".list_people"), people_view);
+            kendo.bind($(".list_events"), events_view);
             
         </script>
         

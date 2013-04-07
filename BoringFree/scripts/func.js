@@ -1,4 +1,4 @@
-    // JavaScript Document
+// JavaScript Document
 
 // Wait for PhoneGap to load
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -26,20 +26,26 @@ function get_detailed_people(elem) {
         contentType: "application/json; charset=utf-8",
         dataType: 'jsonp',
         success: function(info) {
-            console.log(info);
             var html_content = '';
             html_content += '<div class="detailed_people_container">';
-            html_content += '<img src="'+info.photobig+'" class="item_type_icon" />';
+            html_content += '<img src="'+info.photobig+'" class="item_type_icon fleft" />';
             html_content += '<div class="item_title">'+info.name+'</div>';
             html_content += '<div class="item_owner_info">'+info.email+' - '+info.phone+'</div>';
             html_content += '</div>';
             html_content += '<div class="chat_button" data-bind="events:{click: listener}" >Chat</div>';
             $('.detailed_result').html(html_content);
+            kendo.bind($(".chat_button"), chat_view);
         },
         error: function() {
             alert('luck? ');
         }
     });
+}
+
+function get_chat() {
+    window.location.href = '#tabstrip-chat';
+    kendo.bind($("#list_people"), people_view);
+    kendo.bind($("#list_events"), events_view);
 }
 
 
@@ -81,7 +87,7 @@ function get_detailed_event(elem) {
 function get_events() {
     jQuery.support.cors = true;
     //e.preventDefault();
-    window.location.href = '#tabstrip-list';
+    window.location.href = '#tabstrip-list_events';
     $.ajax({
         url: "http://boringfree.com/api/",
         type: 'get',
@@ -103,7 +109,7 @@ function get_events() {
             for(var i = 0; i < info.length; i++) {
                 //console.log(info[i]);
                 html_content += '<div class="event_container" data-bind="events:{click: listener}" id="'+info[i].eid+'">';
-                html_content += '<img src="../styles/img/'+info[i].type+'" class="item_type_icon" />';
+                html_content += '<img src="styles/img/'+info[i].type+'.png" class="item_type_icon" />';
                 html_content += '<div class="item_title">'+info[i].title+'</div>';
                 html_content += '<div class="item_desc">'+info[i]+' - '+info[i].location+' <div class="item_time">'+info[i].start+'-'+info[i].end+'</div></div>';
                 html_content += '<div class="item_owner_info">'+info[i].pname+' - '+info[i].pphone+'</div>';
@@ -125,7 +131,7 @@ function get_events() {
 function get_people() {
     jQuery.support.cors = true;
     //e.preventDefault();
-    window.location.href = '#tabstrip-list';
+    window.location.href = '#tabstrip-list_people';
     $.ajax({
         url: "http://boringfree.com/api/",
         type: 'get',
@@ -146,10 +152,10 @@ function get_people() {
             for(var i = 0; i < info.length; i++) {
                 //console.log(info[i]);
                 html_content += '<div class="people_container" data-bind="events:{click: listener}" id="'+info[i].pid+'">';
-                html_content += '<img src="'+info[i].photo+'" class="item_type_icon" />';
+                html_content += '<img src="'+info[i].photo+'" class="item_type_icon fleft" />';
                 html_content += '<div class="item_title">'+info[i].name+'</div>';
                 html_content += '<div class="item_owner_info">'+info[i].email+' - '+info[i].phone+'</div>';
-                html_content += '</div><hr/>';
+                html_content += '</div>';
             }
             
             $('.result').children().remove();
