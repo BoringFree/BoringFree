@@ -13,10 +13,10 @@
         <link href="styles/main.css" rel="stylesheet" />
     </head>
     <body id="app_body" style="background: #F7F8F8;">
-            <div data-role="view" id="tabstrip-home" data-title="Hello World!" class="main-views">
+            <div data-role="view" id="tabstrip-home" data-title="Hello World!" id="main_view" class="main-views">
                 
                 <h1>I like ...</h1>
-                <form method="post">
+                <form method="post" class="main_form">
                     <div>
                         <input type="checkbox" name="footbal"/><span>Football</span>
                     </div>
@@ -43,6 +43,7 @@
                     </div>
                     <div class="bored_submit">
                         <button type="submit" data-bind="events:{click: listener}" class="fright" id="get_people" type="person">I am bored</button><span class="fright form_and">and </span>
+                        <div class="clr"></div>
                     </div>
                 </form>
             </div>
@@ -58,8 +59,8 @@
                 </header>
                 <header data-role="header">
                         <div data-role="navbar" class="fleft small_nav">
-                            <a data-align="left" class="fleft list_people" type="person" data-bind="events:{click: listener}" >Хора</a>
-                            <a data-align="right" class="fleft list_events" type="person" data-bind="events:{click: listener}" >Събития</a>
+                            <a data-align="left" class="fleft list_choice active_list list_people" type="person" data-bind="events:{click: listener}" >Хора</a>
+                            <a data-align="right" class="fleft list_choice list_events" type="person" data-bind="events:{click: listener}" >Събития</a>
                         </div>
                 </header>
                 <div class="result"></div>
@@ -80,8 +81,8 @@
                 </header>
                 <header data-role="header">
                         <div data-role="navbar" class="fleft small_nav">
-                            <a data-align="left" class="fleft list_choice list_people active_list" type="person" data-bind="events:{click: listener}" >Хора</a>
-                            <a data-align="right" class="fleft list_choice list_events" type="person" data-bind="events:{click: listener}" >Събития</a>
+                            <a data-align="left" class="fleft list_choice list_people" type="person" data-bind="events:{click: listener}" >Хора</a>
+                            <a data-align="right" class="fleft list_choice list_events active_list" type="person" data-bind="events:{click: listener}" >Събития</a>
                         </div>
                 </header>
                 <div class="result"></div>
@@ -90,7 +91,7 @@
                 </footer>
             </div>
         
-            <div data-role="view" id="tabstrip-chat" data-title="UI Interaction" class="main-views">
+            <div data-role="view" id="tabstrip-chat" data-title="Chat" class="main-views">
                 <header data-role="header">
                         <div data-role="navbar" class="fleft">
                             <div class="km-view-title"></div>
@@ -102,7 +103,7 @@
                 <div class="chat_window">Here you can chat</div>
             </div>
     
-            <div data-role="view" id="tabstrip-detailed" data-title="Geolocation" class="main-views">
+            <div data-role="view" id="tabstrip-detailed" data-title="" class="main-views">
                 
                 <header data-role="header">
                         <div data-role="navbar">

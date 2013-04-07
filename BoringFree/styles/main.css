@@ -208,10 +208,14 @@ a.list_events {
 
 .km-navbar.small_nav {
     background: #F7F8F8;
-    height: 30px;
+    height: 35px;
 }
 
 .list_choice.active_list {
     background: orange;
     border-radius: 5px;
+}
+
+.list_choice {
+    margin: 5px 0 0 0;
 }
