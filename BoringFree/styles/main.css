@@ -79,15 +79,6 @@ span.form_and {
     bottom: 0;
 }
 
-.bored_submit button {
-    width: 200px;
-    height: 31px;
-    border: none;
-    margin: 20px auto;
-    display: block;
-    background: url("img/bored_button.png") top left no-repeat;
-}
-
 /*copied styles start */
 #navbar-home h2,
 #navbar-grouped h2 {
@@ -304,12 +295,12 @@ input[type=checkbox]:hover {
 }
 
 .right_check span {
-    padding-top: 18px;
+    padding-top: 15px;
     float: left;
 }
 
 .left_check span {
-    padding-top: 18px;
+    padding-top: 15px;
     float: left;
 }
 
@@ -361,5 +352,17 @@ input[type=checkbox]:hover {
     border-radius: 10px;
     font-size: 44px;
     padding: 1rem;
+}
+
+.bored_submit button {
+    background-color: #921923;
+    width: 280px;
+    height: 80px;
+    margin: 2rem 0px 10px 20px;
+    border-radius: 10px;
+    font-size: 34px;
+    border: 0;
+    font-weight: bold;
+    color: #fafafa;
 }
 
