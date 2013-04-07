@@ -15,12 +15,6 @@
     <body>
             <div data-role="view" id="tabstrip-home" data-title="Hello World!" class="main-views">
                 
-                <header data-role="header">
-                        <div data-role="navbar">
-                            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
-                            <span data-role="view-title"></span>
-                        </div>
-                </header>
                 <h1>I like ...</h1>
                 <form method="post">
                     <div>
@@ -55,18 +49,19 @@
     
             <div data-role="view" id="tabstrip-list" data-title="UI Interaction" class="main-views">
                 <header data-role="header">
-                        <div data-role="navbar">
+                        <div data-role="navbar" class="fleft">
+                            <div class="km-view-title"></div>
                             <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
                             <span data-role="view-title"></span>
+                            
                         </div>
                 </header>
-                <div class="event_type_menu">
-                    <ul>
-                        <li class="fleft" type="person" data-bind="events:{click: listener}" id="list_people">Хора</li>
-                        <li class="fright" type="event" data-bind="events:{click: listener}" id="list_events">Събития</li>
-                    </ul>
-                    <div class="clr"></div>
-                </div>
+                <header data-role="header">
+                        <div data-role="navbar" class="fleft">
+                            <a data-align="left" class="fleft" type="person" data-bind="events:{click: listener}" id="list_people">Хора</a>
+                            <a data-align="right" class="fleft" type="person" data-bind="events:{click: listener}" id="list_events">Събития</a>
+                        </div>
+                </header>
                 <div id="window"></div>
                 <div class="result"></div>
             </div>
@@ -79,7 +74,6 @@
                             <span data-role="view-title"></span>
                         </div>
                 </header>
-                <h1>My Location</h1>
                 <div class="detailed_result"></div>
             </div>
 
@@ -95,7 +89,7 @@
             });
             
             var detailed_events_view = kendo.observable({
-                listener: get_detailed_people //events
+                listener: get_detailed_event //events
             });
             
             var detailed_people_view = kendo.observable({

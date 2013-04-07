@@ -29,9 +29,46 @@ function get_detailed_people(elem) {
             console.log(info);
             var html_content = '';
             html_content += '<div class="detailed_people_container">';
-            html_content += '<img src="'+info.photo+'" class="item_type_icon" />';
+            html_content += '<img src="'+info.photobig+'" class="item_type_icon" />';
             html_content += '<div class="item_title">'+info.name+'</div>';
             html_content += '<div class="item_owner_info">'+info.email+' - '+info.phone+'</div>';
+            html_content += '</div>';
+            html_content += '<div class="chat_button" data-bind="events:{click: listener}" >Chat</div>';
+            $('.detailed_result').html(html_content);
+        },
+        error: function() {
+            alert('luck? ');
+        }
+    });
+}
+
+
+function get_detailed_event(elem) {
+    var eid = elem.currentTarget.attributes[2].nodeValue;
+    window.location.href = '#tabstrip-detailed';
+    $.ajax({
+        url: "http://boringfree.com/api/",
+        type: 'get',
+        crossDomain: true,
+        ProcessData: true,
+        data: {
+           appkey: 'test',
+           cmd: 'eventg',
+           params: {
+               eid: eid
+           }
+        },
+        contentType: "application/json; charset=utf-8",
+        dataType: 'jsonp',
+        success: function(info) {
+            console.log(info);
+            var html_content = '';
+            html_content += '<div class="detailed_event_container">';
+            html_content += '<img src="styles/img/'+info.type+'.png" class="item_type_icon" />';
+            html_content += '<div class="item_title">'+info.title+'</div>';
+            html_content += '<div class="item_title">'+info.info+'</div>';
+            html_content += '<div class="item_desc">'+info.description+' - '+info.location+' <div class="item_time">'+info.start+'-'+info.end+'</div></div>';
+            html_content += '<div class="item_owner_info">'+info.pname+' - '+info.pphone+'</div>';
             html_content += '</div><hr/>';
             $('.detailed_result').html(html_content);
         },
@@ -74,6 +111,7 @@ function get_events() {
             }
             $('.result').children().remove();
             $('.result').html(html_content);
+            kendo.bind($(".event_container"), detailed_events_view);
             //$('.result').html(data);
         },
         error: function() {
@@ -116,7 +154,6 @@ function get_people() {
             
             $('.result').children().remove();
             $('.result').html(html_content);
-            kendo.bind($(".event_container"), detailed_events_view);
             kendo.bind($(".people_container"), detailed_people_view);
             //$('.result').html(data);
         },
