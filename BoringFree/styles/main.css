@@ -198,7 +198,8 @@ span.form_and {
 }
 
 .result {
-    background: #F7F8F8;
+    /*background: #34393C;*/
+    background: white;
 }
 
 a.list_people {
